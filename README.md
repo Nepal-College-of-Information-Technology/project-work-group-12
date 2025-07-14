@@ -150,15 +150,79 @@ npm run dev
 ---
 ## 📁 Repository Structure
 tabletap/
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   └── server.js
-├── frontend/
-│   ├── public/
-│   └── src/
-├── mobile/ (waiter app)
-└── README.md
+├─ 📁backend
+│  ├─ 📁config
+│  │  └─ 📄database.js
+│  ├─ 📁models
+│  │  ├─ 📄MenuItem.js
+│  │  ├─ 📄Notification.js
+│  │  ├─ 📄Order.js
+│  │  ├─ 📄Table.js
+│  │  └─ 📄User.js
+│  ├─ 📄README.md
+│  ├─ 📄dockerfile
+│  ├─ 📄package-lock.json
+│  ├─ 📄package.json
+│  └─ 📄server.js
+├─ 📁frontend
+│  ├─ 📁src
+│  │  ├─ 📁components
+│  │  │  ├─ 📁ui
+│  │  │  │  ├─ 📄badge.tsx
+│  │  │  │  ├─ 📄button.tsx
+│  │  │  │  ├─ 📄card.tsx
+│  │  │  │  ├─ 📄dialog.tsx
+│  │  │  │  ├─ 📄input.tsx
+│  │  │  │  ├─ 📄progress.tsx
+│  │  │  │  ├─ 📄separator.tsx
+│  │  │  │  ├─ 📄tabs.tsx
+│  │  │  │  └─ 📄textarea.tsx
+│  │  │  ├─ 📄MenuGrid.tsx
+│  │  │  ├─ 📄MenuItem.tsx
+│  │  │  ├─ 📄NotificationSystem.tsx
+│  │  │  ├─ 📄OrderTimer.tsx
+│  │  │  └─ 📄QRScanner.tsx
+│  │  ├─ 📁contexts
+│  │  │  ├─ 📄AuthContext.tsx
+│  │  │  └─ 📄OrderContext.tsx
+│  │  ├─ 📁data
+│  │  │  └─ 📄menuItems.ts
+│  │  ├─ 📁lib
+│  │  │  ├─ 📄api.ts
+│  │  │  ├─ 📄socket.ts
+│  │  │  └─ 📄utils.ts
+│  │  ├─ 📁pages
+│  │  │  ├─ 📄.DS_Store
+│  │  │  ├─ 📄AdminPage.tsx
+│  │  │  ├─ 📄ChefPage.tsx
+│  │  │  ├─ 📄CustomerPage.tsx
+│  │  │  ├─ 📄LoginPage.tsx
+│  │  │  └─ 📄WaiterPage.tsx
+│  │  ├─ 📁types
+│  │  │  └─ 📄index.ts
+│  │  ├─ 📄.DS_Store
+│  │  ├─ 📄App.tsx
+│  │  ├─ 📄index.css
+│  │  ├─ 📄main.tsx
+│  │  └─ 📄vite-env.d.ts
+│  ├─ 📄.DS_Store
+│  ├─ 📄.env
+│  ├─ 📄.env.example
+│  ├─ 📄dockerfile
+│  ├─ 📄eslint.config.js
+│  ├─ 📄index.html
+│  ├─ 📄package-lock.json
+│  ├─ 📄package.json
+│  ├─ 📄postcss.config.js
+│  ├─ 📄tailwind.config.js
+│  ├─ 📄tsconfig.app.json
+│  ├─ 📄tsconfig.json
+│  ├─ 📄tsconfig.node.json
+│  └─ 📄vite.config.ts
+├─ 📄.DS_Store
+├─ 📄.gitignore
+└─ 📄README.md
+```
 
 ---
 ## 📈 Future Enhancements
@@ -191,3 +255,4 @@ tabletap/
 
 ---
 ## 🧾 License
+```
