@@ -1,21 +1,30 @@
-version: '3.8'
 
 services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    container_name: mongo
+
   backend:
     build: ./backend
-    container_name: tabletap-backend
+    container_name: backend
     ports:
       - "5000:5000"
     environment:
-      - MONGODB_URI=mongodb+srv://your_user:your_pass@cluster.mongodb.net/tabletap
-      - JWT_SECRET=your_jwt_secret
-    restart: always
+      - MONGO_URI=mongodb://mongo:27017/tabletap
+    depends_on:
+      - mongo
 
   frontend:
     build: ./frontend
-    container_name: tabletap-frontend
+    container_name: frontend
     ports:
       - "3000:80"
     depends_on:
       - backend
-    restart: always
+
+volumes:
+  mongo-data:
