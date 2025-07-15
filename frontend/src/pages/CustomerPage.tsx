@@ -237,10 +237,10 @@ export function CustomerPage() {
                   ) : (
                     <div className="space-y-4">
                       {userOrders.map((order) => (
-                        <div key={order.id} className="border rounded-lg p-4">
+                        <div key={order?.id?.slice(-4)} className="border rounded-lg p-4">
                           <div className="flex items-center justify-between mb-3">
                             <div className="flex items-center gap-3">
-                              <span className="font-semibold">Order #{order.id}</span>
+                              <span className="font-semibold">Order #{order?.id?.slice(-4)}</span>
                               <Badge variant={
                                 order.status === 'ready' ? 'success' :
                                 order.status === 'preparing' ? 'warning' :
