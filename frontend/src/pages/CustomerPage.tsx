@@ -15,7 +15,7 @@ import apiClient from '../lib/api';
 export function CustomerPage() {
   const { user, logout } = useAuth()
   const { currentOrder, orders, submitOrder, addToOrder, removeFromOrder, addNotification } = useOrder()
-  const [tableId] = useState(generateTableId())
+  const [tableId] = useState(user?.tableId || generateTableId())
   const [activeTab, setActiveTab] = useState('menu')
   const [menuItems, setMenuItems] = useState([])
 

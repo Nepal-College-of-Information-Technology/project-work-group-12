@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { User, Lock, Eye, EyeOff } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
@@ -6,19 +6,25 @@ import { Input } from '../components/ui/input'
 import { Button } from '../components/ui/button'
 import { Badge } from '../components/ui/badge'
 import { useAuth } from '../contexts/AuthContext'
+import { generateTableId } from '../lib/utils'
 
 export function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [tableId, setTableId] = useState('')
   const { login } = useAuth()
+  useEffect(() => {
+    const id = generateTableId()
+    setTableId(id)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     try {
-      await login(email, password)
+      await login(email, password, tableId)
     } catch (error) {
       console.error('Login failed:', error)
     } finally {
