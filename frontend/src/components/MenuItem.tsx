@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Plus, Minus, Clock, Leaf, Flame } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
@@ -130,7 +130,7 @@ export function MenuItem({ item, onAddToOrder }: MenuItemProps) {
           </div>
 
           {item.customizations.length > 0 && (
-            <div className="space-y-4"  key={item.id}>
+            <div className="space-y-4"  key={item?.id}>
               <h4 className="font-semibold text-slate-800">Customizations</h4>
               {item.customizations.map(customization => (
                 <div key={customization.id} className="space-y-2">

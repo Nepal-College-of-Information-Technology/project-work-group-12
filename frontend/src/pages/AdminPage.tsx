@@ -223,16 +223,16 @@ export function AdminPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {orders.slice(0, 10).map((order) => (
+                    {orders?.slice(0, 10).map((order) => (
                       <div key={order.id} className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                         <div className="flex items-center gap-4">
                           <div>
-                            <p className="font-semibold">Order #{order.id.slice(-4)}</p>
-                            <p className="text-sm text-slate-600">{order.tableId}</p>
+                            <p className="font-semibold">Order #{order?.id?.slice(-4)}</p>
+                            <p className="text-sm text-slate-600">{order?.tableId}</p>
                           </div>
                           <Badge variant={
-                            order.status === 'completed' ? 'success' :
-                            order.status === 'preparing' ? 'warning' :
+                            order?.status === 'completed' ? 'success' :
+                            order?.status === 'preparing' ? 'warning' :
                             'secondary'
                           }>
                             {order.status}

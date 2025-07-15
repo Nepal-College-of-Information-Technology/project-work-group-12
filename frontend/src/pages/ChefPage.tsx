@@ -119,7 +119,7 @@ export function ChefPage() {
                     <Card key={order.id} className={`border-0 shadow-lg ${getPriorityColor(priority)}`}>
                       <CardHeader className="pb-3">
                         <div className="flex items-center justify-between">
-                          <CardTitle className="text-lg">Order #{order.id.slice(-4)}</CardTitle>
+                          <CardTitle className="text-lg">Order #{order?.id?.slice(-4)}</CardTitle>
                           <Badge variant={priority === 'high' ? 'destructive' : priority === 'medium' ? 'warning' : 'secondary'}>
                             {priority} priority
                           </Badge>
@@ -134,7 +134,7 @@ export function ChefPage() {
                       <CardContent>
                         <div className="space-y-3 mb-4">
                           {order.items.map((item) => (
-                            <div key={item.id} className="bg-white/80 p-3 rounded-lg">
+                            <div key={item?.id?.slice(-4)} className="bg-white/80 p-3 rounded-lg">
                               <div className="flex justify-between items-start mb-2">
                                 <span className="font-medium">{item.menuItem.name}</span>
                                 <span className="text-sm text-slate-600">x{item.quantity}</span>
@@ -189,10 +189,10 @@ export function ChefPage() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {preparingOrders.map((order) => (
-                  <Card key={order.id} className="border-0 shadow-lg bg-orange-50 border-orange-200">
+                  <Card key={order?.id} className="border-0 shadow-lg bg-orange-50 border-orange-200">
                     <CardHeader className="pb-3">
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-lg">Order #{order.id.slice(-4)}</CardTitle>
+                        <CardTitle className="text-lg">Order #{order?.id?.slice(-4)}</CardTitle>
                         <Badge className="bg-orange-100 text-orange-800">
                           <Flame className="w-3 h-3 mr-1" />
                           Cooking
@@ -200,20 +200,20 @@ export function ChefPage() {
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600">
                         <Clock className="w-4 h-4" />
-                        <span>{order.tableId}</span>
+                        <span>{order?.tableId}</span>
                         <span>•</span>
-                        <span>{order.estimatedTime} min</span>
+                        <span>{order?.estimatedTime} min</span>
                       </div>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3 mb-4">
                         {order.items.map((item) => (
-                          <div key={item.id} className="bg-white/80 p-3 rounded-lg">
+                          <div key={item?.id} className="bg-white/80 p-3 rounded-lg">
                             <div className="flex justify-between items-start mb-2">
                               <span className="font-medium">{item.menuItem.name}</span>
                               <span className="text-sm text-slate-600">x{item.quantity}</span>
                             </div>
-                            {Object.entries(item.customizations).map(([key, value]) => (
+                            {Object.entries(item?.customizations).map(([key, value]) => (
                               <div key={key} className="text-xs text-slate-600">
                                 {key}: {value}
                               </div>
@@ -248,11 +248,11 @@ export function ChefPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {readyOrders.map((order) => (
-                  <Card key={order.id} className="border-0 shadow-lg bg-green-50 border-green-200">
+                {readyOrders.map((order,index) => (
+                  <Card key={index} className="border-0 shadow-lg bg-green-50 border-green-200">
                     <CardHeader className="pb-3">
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-lg">Order #{order.id.slice(-4)}</CardTitle>
+                        <CardTitle className="text-lg">Order #{order?.id?.slice(-4)}</CardTitle>
                         <Badge className="bg-green-100 text-green-800">
                           <CheckCircle className="w-3 h-3 mr-1" />
                           Ready
@@ -267,8 +267,8 @@ export function ChefPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        {order.items.map((item) => (
-                          <div key={item.id} className="bg-white/80 p-3 rounded-lg">
+                        {order.items.map((item,index) => (
+                          <div key={index} className="bg-white/80 p-3 rounded-lg">
                             <div className="flex justify-between items-start">
                               <span className="font-medium">{item.menuItem.name}</span>
                               <span className="text-sm text-slate-600">x{item.quantity}</span>
