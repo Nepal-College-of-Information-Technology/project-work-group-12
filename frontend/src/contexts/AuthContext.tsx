@@ -5,7 +5,7 @@ import { User } from '../types'
 
 interface AuthContextType {
   user: User | null
-  login: (email: string, password: string) => Promise<void>
+  login: (email: string, password: string, tableId: string ) => Promise<void>
   logout: () => void
   isLoading: boolean
 }
@@ -37,10 +37,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setIsLoading(false)
   }, [])
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string, tableId: string) => {
     setIsLoading(true)
     try {
-      const response = await apiClient.login(email, password)
+      const response = await apiClient.login(email, password, tableId)
       const userData = response.data.user
       
       const user: User = {

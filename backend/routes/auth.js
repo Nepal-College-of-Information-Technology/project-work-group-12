@@ -68,7 +68,7 @@ router.post('/register', validateUser, async (req, res) => {
 // @access  Public
 router.post('/login', validateLogin, async (req, res) => {
   try {
-    const { email, password } = req.body
+    const { email, password, tableId } = req.body
 
     console.log(req.body)
     // Check if user exists and get password
@@ -101,6 +101,12 @@ router.post('/login', validateLogin, async (req, res) => {
     user.lastLogin = new Date()
     await user.save()
 
+    if(tableId) {
+      // Update tableId if provided
+      user.tableId = tableId
+      await user.save()
+    }
+
     // Generate token
     const token = generateToken(user._id)
 
@@ -114,7 +120,7 @@ router.post('/login', validateLogin, async (req, res) => {
           email: user.email,
           role: user.role,
           avatar: user.avatar,
-          tableId: user.tableId,
+          tableId: tableId || user.tableId,
           isActive: user.isActive,
           preferences: user.preferences
         },

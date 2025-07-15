@@ -21,7 +21,8 @@ export const validateUser = (req, res, next) => {
 export const validateLogin = (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().email().required(),
-    password: Joi.string().required()
+    password: Joi.string().required(),
+    tableId: Joi.string().required()
   })
 
   const { error } = schema.validate(req.body)

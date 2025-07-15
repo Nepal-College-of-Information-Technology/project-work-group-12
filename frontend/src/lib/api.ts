@@ -23,8 +23,12 @@ class ApiClient {
     ...options,
   };
 
-  if (options.method === 'POST' && options.body) {
-    console.log('API request payload:', JSON.stringify(JSON.parse(options.body), null, 2));
+  if (options.method === 'POST' && options.body && typeof options.body === 'string') {
+    try {
+      console.log('API request payload:', JSON.stringify(JSON.parse(options.body), null, 2));
+    } catch (e) {
+      console.log('API request payload (non-JSON):', options.body);
+    }
   }
 
   try {
@@ -53,10 +57,10 @@ class ApiClient {
   }
 
   // Auth endpoints
-  async login(email: string, password: string) {
+  async login(email: string, password: string, tableId: string) {
     const response = await this.request<any>('/auth/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, tableId }),
     })
     
     if (response.data?.token) {
