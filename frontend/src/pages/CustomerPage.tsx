@@ -9,13 +9,13 @@ import { MenuGrid } from '../components/MenuGrid'
 import { OrderTimer } from '../components/OrderTimer'
 import { useAuth } from '../contexts/AuthContext'
 import { useOrder } from '../contexts/OrderContext'
-import { formatCurrency } from '../lib/utils'
+import { formatCurrency, generateTableId } from '../lib/utils'
 import apiClient from '../lib/api';
 
 export function CustomerPage() {
   const { user, logout } = useAuth()
   const { currentOrder, orders, submitOrder, addToOrder, removeFromOrder, addNotification } = useOrder()
-  const [tableId] = useState('T' + Math.random().toString(36).substr(2, 6).toUpperCase())
+  const [tableId] = useState(generateTableId())
   const [activeTab, setActiveTab] = useState('menu')
   const [menuItems, setMenuItems] = useState([])
 

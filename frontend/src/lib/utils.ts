@@ -19,7 +19,7 @@ export function formatTime(seconds: number) {
 }
 
 export function generateTableId() {
-  return `T${Math.random().toString(36).substr(2, 6).toUpperCase()}`
+  return `T${Math.ceil(Math.random() * 12)}`
 }
 
 export function generateOrderId() {
