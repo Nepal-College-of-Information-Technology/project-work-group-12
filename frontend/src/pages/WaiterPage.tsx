@@ -85,7 +85,7 @@ export function WaiterPage() {
                   <Card key={order.id} className="border-0 shadow-lg">
                     <CardHeader className="pb-3">
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-lg">Order #{order.id.slice(-4)}</CardTitle>
+                        <CardTitle className="text-lg">Order #{order?.id?.slice(-4)}</CardTitle>
                         <Badge className={getOrderStatusColor(order.status)}>
                           {order.status}
                         </Badge>
