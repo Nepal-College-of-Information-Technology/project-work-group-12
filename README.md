@@ -103,6 +103,9 @@ This project highlights real-time data exchange, scalability, and minimal human 
 
 ### 🧭 QR Landing Page  
 
+The first screen users see after scanning the QR — offering WiFi access and digital menu entry.  
+![Landing Page](./screenshots/landing-page.png)
+
 
 ### 🍽️ Menu View  
 
