@@ -101,7 +101,8 @@ This project highlights real-time data exchange, scalability, and minimal human 
 > 📸 **"A picture is worth a thousand words."**  
 > The following screenshots give a visual walkthrough of the TableTap system — from customer check-in via QR to real-time order handling by kitchen and waitstaff.
 
-### 🧭 QR Landing Page  
+### 🧭 Landing Page  
+![alt text](landing-page.png.png)
 
 
 ### 🍽️ Menu View  
