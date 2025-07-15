@@ -97,8 +97,8 @@ app.use('*', (req, res) => {
 
 const PORT = process.env.PORT || 8000
 
-server.listen(8000, () => {
-  console.log(`🚀 TableTap server running on port`)
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 TableTap server running on port ${PORT}`)
   console.log(`📱 Socket.IO server ready for real-time connections`)
 })
 
