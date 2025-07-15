@@ -101,21 +101,59 @@ This project highlights real-time data exchange, scalability, and minimal human 
 > 📸 **"A picture is worth a thousand words."**  
 > The following screenshots give a visual walkthrough of the TableTap system — from customer check-in via QR to real-time order handling by kitchen and waitstaff.
 
-### 🧭 Landing Page  
-![alt text](landing-page.png.png)
+---
 
+### 🛠 Admin Views
 
-### 🍽️ Menu View  
+#### 📊 Dashboard
+![Admin Dashboard](screenshots/admindashboard.png)
 
-
-### Order summary/cart
-
-
-### Waiter notification page
-
-...
+#### 🧾 Order Management
+![Admin Orders](screenshots/adminorders.png)
 
 ---
+
+### 👨‍🍳 Chef Views
+
+#### 📋 Chef Dashboard
+![Chef Dashboard](screenshots/chefdashboard.png)
+
+#### ⏳ Pending Orders
+![Chef Pending Orders](screenshots/chefpendingorders.png)
+
+#### ✅ Ready Orders
+![Chef Ready Orders](screenshots/chefready.png)
+
+---
+
+### 🙋 Customer Views
+
+#### 🏠 Customer Dashboard
+![Customer Dashboard](screenshots/customerdashboard.png)
+
+#### 📦 My Orders
+![Customer Orders](screenshots/customerorders.png)
+
+---
+
+### 👨‍🍽️ Waiter Views
+
+#### 📋 Waiter Dashboard
+![Waiter Dashboard](screenshots/waiterdashboard.png)
+
+#### 🍽️ Table Overview
+![Waiter Tables](screenshots/waitertables.png)
+
+---
+
+### 🚪 Landing & Login
+
+#### 🧭 Landing Page
+![Landing Page](screenshots/landing-page.png)
+
+#### 🔐 Login Screen
+![Login Screen](screenshots/login.png)
+
 ## 🔧 Configuration
 
 Create a `.env` file in the project root and add the following:
