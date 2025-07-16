@@ -56,13 +56,13 @@ This project highlights real-time data exchange, scalability, and minimal human 
 - Amazon Web Services (AWS)
 
 ### 💻 Programming Languages
-- JavaScript / Python / Java / Node.js
+- JavaScript , Typescript
 
 ### 🗄️ Databases
 - MongoDB 
 
 ### 🛠️ Frameworks & Libraries
-- React / Express.js / Flask
+- React / Express.js
 
 ### 📦 DevOps & Deployment
 - Docker
